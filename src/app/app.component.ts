@@ -16,6 +16,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
           <a routerLink="/cliente/radicar" routerLinkActive="active">Radicar</a>
           <a routerLink="/cliente/login" routerLinkActive="active">Cliente</a>
           <a routerLink="/gestor/login" routerLinkActive="active">Gestor</a>
+          <a href="https://supermarket-pqrs-app.vercel.app" target="_blank" rel="noreferrer">Cliente PWA</a>
         </nav>
       </header>
       <router-outlet />
@@ -23,4 +24,3 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   `
 })
 export class AppComponent {}
-
