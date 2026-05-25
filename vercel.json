@@ -1,0 +1,10 @@
+{
+  "buildCommand": "npm run build -- --configuration production",
+  "outputDirectory": "dist/pqrs-frontend/browser",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

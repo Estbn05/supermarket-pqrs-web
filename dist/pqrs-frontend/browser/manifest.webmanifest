@@ -1,0 +1,16 @@
+{
+  "name": "Sistema PQRS SuperMarket",
+  "short_name": "PQRS",
+  "theme_color": "#0F2B5B",
+  "background_color": "#f4f6fa",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/cliente/radicar",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
