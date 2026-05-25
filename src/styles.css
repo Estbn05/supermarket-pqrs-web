@@ -108,6 +108,14 @@ textarea {
   margin: 0 0 14px;
 }
 
+.panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 .muted {
   color: var(--muted);
 }

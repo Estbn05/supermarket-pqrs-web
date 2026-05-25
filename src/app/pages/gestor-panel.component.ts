@@ -1,6 +1,7 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../core/api.service';
+import { AuthService } from '../core/auth.service';
 import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
 
 @Component({
@@ -9,7 +10,10 @@ import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
   template: `
     <main class="page">
       <section class="panel">
-        <h1>Panel Gestor PQRS</h1>
+        <div class="panel-header">
+          <h1>Panel Gestor PQRS</h1>
+          <button class="btn" (click)="logout()">Cerrar sesion</button>
+        </div>
         <div class="actions">
           <select [(ngModel)]="tipo">
             <option value="">Todos los tipos</option>
@@ -112,7 +116,7 @@ export class GestorPanelComponent implements OnInit {
   anexoMessage = signal('');
   anexoError = signal(false);
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private auth: AuthService) {}
 
   ngOnInit(): void {
     this.load();
@@ -175,6 +179,10 @@ export class GestorPanelComponent implements OnInit {
 
   downloadReporte(): void {
     this.api.reporte(this.tipo, this.estado).subscribe((blob) => this.saveBlob(blob, 'Reporte_PQRS.pdf'));
+  }
+
+  logout(): void {
+    this.auth.logout();
   }
 
   private saveBlob(blob: Blob, fileName: string): void {

@@ -26,7 +26,7 @@ export class AuthService {
   logout(): void {
     sessionStorage.removeItem(STORAGE_KEY);
     this.session.set(null);
-    void this.router.navigateByUrl('/cliente/radicar');
+    void this.router.navigateByUrl('/gestor/login');
   }
 
   private readSession(): SesionResponse | null {
@@ -34,4 +34,3 @@ export class AuthService {
     return raw ? JSON.parse(raw) as SesionResponse : null;
   }
 }
-
