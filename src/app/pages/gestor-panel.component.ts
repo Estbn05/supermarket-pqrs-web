@@ -37,6 +37,7 @@ import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
                 <th>Cliente</th>
                 <th>Tipo</th>
                 <th>Estado</th>
+                <th>Descripcion</th>
                 <th>Justificacion</th>
                 <th>Acciones</th>
               </tr>
@@ -48,6 +49,7 @@ import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
                   <td>{{ item.cliente }}<br><span class="muted">{{ item.correo }}</span></td>
                   <td>{{ item.tipoPqrs }}</td>
                   <td><span class="badge">{{ item.estado }}</span></td>
+                  <td class="description-cell">{{ item.descripcion }}</td>
                   <td>{{ item.justificacion || 'Pendiente de gestion' }}</td>
                   <td>
                     <button class="btn" (click)="select(item)">Gestionar</button>
@@ -57,7 +59,7 @@ import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
                   </td>
                 </tr>
               } @empty {
-                <tr><td colspan="6">No hay resultados para los filtros seleccionados.</td></tr>
+                <tr><td colspan="7">No hay resultados para los filtros seleccionados.</td></tr>
               }
             </tbody>
           </table>
@@ -70,6 +72,7 @@ import { EstadoPqrs, Radicado, TipoPqrs } from '../core/models';
       @if (selected()) {
         <section class="panel" style="margin-top: 18px">
           <h2>Cambiar estado: {{ selected()?.numeroRadicado }}</h2>
+          <p class="muted"><strong>Descripcion:</strong> {{ selected()?.descripcion }}</p>
           <div class="form-grid">
             <div class="field">
               <label>Nuevo estado</label>

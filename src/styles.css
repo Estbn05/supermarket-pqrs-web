@@ -229,6 +229,11 @@ th {
   background: #e8eef8;
 }
 
+.description-cell {
+  max-width: 260px;
+  white-space: normal;
+}
+
 @media (max-width: 820px) {
   .topbar {
     align-items: flex-start;
@@ -240,4 +245,3 @@ th {
     grid-template-columns: 1fr;
   }
 }
-
